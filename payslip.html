@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך תלוש שכר</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: #f5f7fa;
+        }
+        
+        .payslip-section {
+            transition: all 0.3s ease;
+        }
+        
+        .payslip-section:hover {
+            transform: translateY(-3px);
+        }
+        
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .content.open {
+            max-height: 500px;
+        }
+        
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .arrow.open {
+            transform: rotate(180deg);
+        }
+
+        .custom-ul {
+            list-style: none; /* Remove default bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        .custom-ul li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75em;
+        }
+
+        .custom-ul li::before {
+            content: "•";
+            flex: 0 0 1em; /* Fixed-width "dot column" */
+            display: inline-block;
+            margin-right: 0.5em;
+            line-height: 1.2em;
+            margin-top: 0.2em; 
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="max-w-4xl mx-auto">
+        <!-- כותרת ראשית -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-t-xl">
+            <h1 class="text-3xl font-bold text-center">איך לקרוא את תלוש השכר שלך</h1>
+            <p class="mt-3 text-center text-lg">מדריך פשוט להבנת המרכיבים השונים בתלוש השכר של עובדי הוראה - עוז לתמורה</p>
+        </div>
+        
+        <!-- הוראות -->
+        <div class="bg-blue-50 p-4 text-center border-b border-blue-100">
+            <p class="text-blue-800">רוצים להבין יותר? לחצו על כל חלק להסבר מפורט</p>
+        </div>
+        
+        <!-- חלקי תלוש השכר -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-white rounded-b-xl">
+            
+            <!-- חלק 1: פרטים אישיים -->
+            <div class="payslip-section bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                <div class="bg-blue-100 p-4 flex justify-between items-center cursor-pointer" onclick="toggleSection('section1')">
+                    <h2 class="text-xl font-bold text-blue-800">נתוני העסקה</h2>
+                    <svg class="arrow w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                
+                <!-- תמונה (תמיד מוצגת) -->
+                <div class="p-4 bg-white-50 flex justify-center">
+                    <div class="w-full h-48  flex items-center justify-center rounded border-dashed border-gray-300">
+                        <div class="text-center text-gray-500">
+                            <p class="text-sm"><img src="employeeDetails.png"/></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- הסבר (מוסתר בהתחלה) -->
+                <div id="section1" class="content">
+                    <div class="p-4">
+                        <p class="text-gray-700"> בחלק זה מפורטים הפרטים המקצועים שלך ועל המשרה:</p>
+                        <ul class="mt-2 space-y-1 list-disc list-inside text-gray-600 custom-ul text-lg">
+                            <li>בסיס המשרה (בעוז לתמורה משרה מלאה הינה 40 שעות המתחלקות בין שעות: פרונטליות, פרטניות, תומכות הוראה ותפקיד)</li>
+                            <li>תחילת עבודה (תאריך)</li>
+                            <li>תפקיד ודירוג (עוז לתמורה)</li>
+                            <li> דרגה (לפי השכלה) </li>
+                            <li>אחוז המשרה כולל (אחוז המשרה)</li>
+                            <li>דרגה נוספת והתאריך שלה </li>
+                           
+                        </ul>
+                        <p class="mt-3 text-blue-700 font-medium text-lg" style="font-size: 15px;">טיפ: ניתן לוודא את הנתונים בפורטל עו"ה באיזור מרחב מנהלי</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- חלק 2: רכיבי שכר -->
+            <div class="payslip-section bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                <div class="bg-green-100 p-4 flex justify-between items-center cursor-pointer" onclick="toggleSection('section2')">
+                    <h2 class="text-xl font-bold text-green-800">תשלומים</h2>
+                    <svg class="arrow w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                
+                <!-- תמונה (תמיד מוצגת) -->
+                <div class="p-4 bg-white-50 flex justify-center">
+                    <div class="w-full h-48  flex items-center justify-center rounded border-dashed border-gray-300">
+                        <div class="text-center text-gray-500">
+                            <p class="text-sm"><img src="payments.png"/></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- הסבר (מוסתר בהתחלה) -->
+                <div id="section2" class="content">
+                    <div class="p-4">
+                        <p class="text-gray-700">בחלק זה מפורטים כל רכיבי השכר והתשלומים שלך:</p>
+                        <ul class="mt-2 space-y-1 list-disc list-inside text-gray-600 custom-ul">
+                            <li>שכר בסיס לגמלה וקרן השתלמות (סכום שכר הבסיס, לפעמים בשורה לאחר מכן יש הפרשים של שכר רטרואקטיבית)</li>
+                            <li>בסיס לגמלה בלבד (תשלום עבור תפקיד לפי אחוזים, וגמול לפיצול לפי כיתות ותפקידים - בעוז לתמורה)</li>
+                            <li> החזרי הוצאות (נסיעות, טלפון) - מופרש לקופת גמל </li>
+                            <li>תוספת 1% לשכר (לפי הסכמים)</li>
+                
+                        </ul>
+                        <!-- אולי למחוק -->
+                        <p class="mt-3 text-green-700 font-medium"  style="font-size: 15px;">טיפ: בדקו שאחוז המשרה תקין!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- חלק 3: ניכויים -->
+            <div class="payslip-section bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                <div class="bg-red-100 p-4 flex justify-between items-center cursor-pointer" onclick="toggleSection('section3')">
+                    <h2 class="text-xl font-bold text-red-800">ניכויים והפרשות</h2>
+                    <svg class="arrow w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                
+                <!-- תמונה (תמיד מוצגת) -->
+                <div class="p-4 bg-white-50 flex justify-center">
+                    <div class="w-full h-48  flex items-center justify-center rounded border-dashed border-gray-300">
+                        <div class="text-center text-gray-500">
+                            <p class="text-sm"><img src="payments.png"/></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- הסבר (מוסתר בהתחלה) -->
+                <div id="section3" class="content">
+                    <div class="p-4">
+                        <p class="text-gray-700">בחלק זה מפורטים ניכויי מיסים וניכוי לקופות גמל וקרנות:</p>
+                        <ul class="mt-2 space-y-1 list-disc list-inside text-gray-600 custom-ul">
+                            
+                            <li>ניכוי מיסים הולכים למדינה (מס הכנסה, ביטוח לאומי ובריאות לפי מדרגות המס)</li>
+                            <li>הפרשות לפנסיה (הפרשה לפי חוק, 7%)</li>
+                             <li>הפרשה לפיצויים (חלק מקרן הפנסיה, יש תלושים שמופיע כחלק מהפנסיה, 8.33%)</li>
+                            <li>הפרשות לקרן השתלמות (רגילה שממנה אפשר לצאת לשבתון, 8.4% מהמעסיק, 4.2% מהמורה)</li>
+                            <li>הפרשות לקופת גמל (5%)</li>
+                        </ul>
+                        <p class="mt-3 text-red-700 font-medium"  style="font-size: 15px;">טיפ: בדקו שמפרישים לקרן ההשתלמות שלכם!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- חלק 4: סיכום -->
+            <div class="payslip-section bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                <div class="bg-purple-100 p-4 flex justify-between items-center cursor-pointer" onclick="toggleSection('section4')">
+                    <h2 class="text-xl font-bold text-purple-800">נתוני מס</h2>
+                    <svg class="arrow w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                
+                <!-- תמונה (תמיד מוצגת) -->
+                <div class="p-4 bg-white-50 flex justify-center" style="padding-top: 11px;">
+                    <div class="w-full h-48   items-center justify-center rounded border-dashed border-gray-300">
+                        <div class="text-center text-gray-500">
+                            <p class="text-sm">
+                                <img src="general.png" style="height: 200px; display: block; margin: 0 auto;"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- הסבר (מוסתר בהתחלה) -->
+                <div id="section4" class="content">
+                    <div class="p-4">
+                        <p class="text-gray-700">בחלק זה מופיע סיכום התלוש ונתונים מצטברים:</p>
+                        <ul class="mt-2 space-y-1 list-disc list-inside text-gray-600 custom-ul">
+                            <li>מספר ת"ז, מצב משפחתי ותאריך לידה (לפי נתונים אישיים)</li>
+                            <li>ביטוח לאומי (עבור מורים, רגיל)</li>
+                            <li>ברוטו למס הכנסה (השכר ממנו נגזר המס)</li>
+                            <li>(מס שולי (לפי מדרגות מס ההכנסה</li>
+                            <li>נקודות זיכוי (לפי מצב אישי: ילדים, תואר, צבא וכדומה. נכון ל2025 כל נקודה שווה 242 לחודש)</li>
+                            <li>ברוטו לביטוח לאומי (השכר ממנו נגזר המס)</li>
+                            <li>ברוטו למס הכנסה (השכר ממנו נגזר המס)</li>
+                            <li>וותק מוכר וצבאי (ותק מוכר)</li>
+                        </ul>
+                        <p class="mt-3 text-purple-700 font-medium" style="font-size: 15px;">טיפ: בדקו שנקודות הזיכוי במס מעודכנות לפי מצבך האישי, הנקודות אינן מתעדכנות לבד!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const header = section.previousElementSibling.previousElementSibling;
+            const arrow = header.querySelector('.arrow');
+            
+            section.classList.toggle('open');
+            arrow.classList.toggle('open');
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9580025a350c09bb',t:'MTc1MTMxMTEwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
